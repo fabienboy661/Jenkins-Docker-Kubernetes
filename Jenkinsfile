@@ -20,7 +20,11 @@ pipeline {
 	    
 	    stage('Build') {
 		    steps {
-			    sh 'mvn clean package'
+			    dir('kubernetes') {
+					sh 'pwd' 
+					sh 'ls -l' 
+					sh 'mvn clean package'
+				}
 		    }
 	    }
 	    
